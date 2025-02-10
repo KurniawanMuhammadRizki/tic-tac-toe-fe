@@ -5,12 +5,17 @@ import { Move } from "@/types/move";
 
 let stompClient: Client | null = null;
 
+export const disconnectWebSocket = () => {
+  if (stompClient) {
+    stompClient.deactivate();
+    stompClient = null;
+  }
+};
+
 export const connectWebSocket = (
   onMessageReceived: (message: Game) => void
 ) => {
-  if (stompClient) {
-    return stompClient;
-  }
+  disconnectWebSocket();
 
   stompClient = new Client({
     webSocketFactory: () =>

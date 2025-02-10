@@ -7,11 +7,7 @@ interface GameBoardProps {
   playerSymbol: string;
 }
 
-const GameBoard: React.FC<GameBoardProps> = ({
-  game,
-  onCellClick,
-  playerSymbol,
-}) => {
+const GameBoard: React.FC<GameBoardProps> = ({ game, onCellClick }) => {
   const canPlay = (row: number, col: number) => {
     return game.status === "PLAYING" && !game.board[row][col];
   };

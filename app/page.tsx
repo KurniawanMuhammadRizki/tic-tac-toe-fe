@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Game } from "@/types/game";
-import { connectWebSocket, sendMove } from "@/lib/websocket";
+import { connectWebSocket, sendMove } from "@/lib/webSocket";
 import { Move } from "@/types/move";
 import GameStatus from "./components/gameStatus";
 import GameBoard from "./components/gameBoard";
